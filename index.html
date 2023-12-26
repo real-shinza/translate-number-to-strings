@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico">
+    <title>Translate number to strings</title>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TPF4S32B');</script>
+    <!-- End Google Tag Manager -->
+    <script src="src/language/language.js"></script>
+    <script src="src/language/english.js"></script>
+    <script src="src/language/japanese.js"></script>
+    <script src="src/language/chinese.js"></script>
+    <script src="src/language/korean.js"></script>
+    <script src="src/translate.js"></script>
+    <script src="src/copy.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPF4S32B"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="panel-body">
+      <h1>Translate number to strings</h1>
+      <h1>数字を文字に変換します</h1>
+      <div class="number-input">
+        <input type="number" class="number-text" id="number-text" step="1"  min="0" max="9007199254740991" value="" placeholder="0 ~ 9007199254740991">
+        <button type="button" class="number-button" id="number-button" onclick="translateNumber()">Convert</button>
+      </div>
+      <table class="number-table">
+        <tbody class="number-tbody">
+          <tr class="english">
+            <th class="language" lang="en">English</th>
+            <td class="number-string" id="english" lang="en" value=""></td>
+            <td class="number-copy"><button type="button" class="copy-button" onclick="copyNumber('english')">Copy</button></td>
+          </tr>
+          <tr class="japanese">
+            <th class="language" lang="ja">日本語</th>
+            <td class="number-string" id="japanese" lang="ja" value=""></td>
+            <td class="number-copy"><button type="button" class="copy-button" onclick="copyNumber('japanese')">Copy</button></td>
+          </tr>
+          <tr class="japanese daiji"> 
+            <th class="language" lang="ja">日本語（大字）</th>
+            <td class="number-string" id="japanese-daiji" lang="ja" value=""></td>
+            <td class="number-copy"><button type="button" class="copy-button" onclick="copyNumber('japanese-daiji')">Copy</button></td>
+          </tr>
+          <tr class="japanese hiragana">
+            <th class="language" lang="ja">日本語（平仮）</th>
+            <td class="number-string" id="japanese-hiragana" lang="ja" value=""></td>
+            <td class="number-copy"><button type="button" class="copy-button" onclick="copyNumber('japanese-hiragana')">Copy</button></td>
+          </tr>
+          <tr class="traditional-chinese">
+            <th class="language" lang="zh">繁體中文</th>
+            <td class="number-string" id="traditional" lang="zh" value=""></td>
+            <td class="number-copy"><button type="button" class="copy-button" onclick="copyNumber('traditional')">Copy</button></td>
+          </tr>
+          <tr class="traditional-chinese daxie">
+            <th class="language" lang="zh">繁體中文（大寫）</th>
+            <td class="number-string" id="traditional-daxie" lang="zh" value=""></td>
+            <td class="number-copy"><button type="button" class="copy-button" onclick="copyNumber('traditional-daxie')">Copy</button></td>
+          </tr>
+          <tr class="simplified-chinese">
+            <th class="language" lang="zh">简体中文</th>
+            <td class="number-string" id="simplified" lang="zh" value=""></td>
+            <td class="number-copy"><button type="button" class="copy-button" onclick="copyNumber('simplified')">Copy</button></td>
+          </tr>
+          <tr class="simplified-chinese daxie">
+            <th class="language" lang="zh">简体中文（大写）</th>
+            <td class="number-string" id="simplified-daxie" lang="zh" value=""></td>
+            <td class="number-copy"><button type="button" class="copy-button" onclick="copyNumber('simplified-daxie')">Copy</button></td>
+          </tr>
+          <tr class="korean">
+            <th class="language" lang="ko">한국어</th>
+            <td class="number-string" id="korean" lang="ko" value=""></td>
+            <td class="number-copy"><button type="button" class="copy-button" onclick="copyNumber('korean')">Copy</button></td>
+          </tr>
+          <tr class="korean hanja">
+            <th class="language" lang="ko">한국어（漢字）</th>
+            <td class="number-string" id="korean-hanja" lang="ko" value=""></td>
+            <td class="number-copy"><button type="button" class="copy-button" onclick="copyNumber('korean-hanja')">Copy</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="sns">
+      <div class="developer">Developer</div>
+      <a href="https://github.com/real-shinza" target="_blank" id="github"><img src="img/github.svg" class="sns" alt="GitHub"></a>
+    </div>
+    <div id="toast">
+      <p>Copied the string</p>
+    </div>
+  </body>
+</html>

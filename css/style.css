@@ -1,0 +1,124 @@
+body {
+  background: #ebebeb;
+}
+
+.panel-body {
+  background: #ffffff;
+  width: min(70%, 1280px);
+  padding: 5px 15px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+h1 {
+  height: 30px;
+}
+
+.number-input {
+  padding: 25px;
+}
+
+.number-text {
+  width: min(60%, 600px);
+  height: 55px;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 4px solid #52c2d0;
+  border-radius: 10px;
+  font-size: 30px;
+}
+
+.number-button {
+  background: #52c2d0;
+  width: min(10%, 100px);
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.number-button:hover {
+  background: #51a3ad;
+  cursor: pointer;
+}
+
+.number-table {
+  width: 95%;
+  padding: 20px 0px;
+  margin: auto;
+  text-align: left;
+}
+
+tr {
+  box-sizing: border-box;
+  border: solid 5px #ffffff;
+  border-radius: 10px;
+}
+
+th.language {
+  background: #52c2d0;
+  width: min(20%, 180px);
+  padding: 10px;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+td.number-string {
+  background: #eeeeee;
+  width: 72%;
+  padding: 10px 20px;
+  font-size: 20px;
+}
+
+td.number-copy {
+  width: min(8%, 70px);
+}
+
+.copy-button {
+  background: #ffffff;
+  margin: auto;
+  box-sizing: border-box;
+  border: 3px solid #52c2d0;
+  border-radius: 8px;
+  font-size: 17px;
+  display: block;
+}
+
+.copy-button:hover {
+  background: #52c2d0;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+div.sns {
+  text-align: center;
+  padding: 10px;
+}
+
+img.sns {
+  width: 32px;
+  height: 32px;
+  padding: 5px 10px;
+}
+
+#toast {
+  height: 40px;
+  width: 200px;
+  border-radius: 8px;
+  background-color: #52c2d0;
+  position: fixed;
+  bottom: 30px;
+  left: 20px;
+  display: flex;
+  visibility: hidden;
+}
+
+#toast p {
+  margin: auto;
+  font-size: 17px;
+  vertical-align: center;
+  color: #ffffff;
+}
