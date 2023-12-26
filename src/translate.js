@@ -29,5 +29,5 @@ function translateNumber() {
   setNumber('korean-hanja', korean.toString(true));
 
   window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({ event: 'convert', number: num });
+  window.dataLayer.push({ event: 'translate', number: num });
 }
