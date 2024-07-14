@@ -6,23 +6,23 @@ class English extends Language {
     const POWERS = ['', '', 'hundred'];
     const UNITS = ['', 'thousand', 'million', 'billion', 'trillion', 'quadrillion'];
 
-    if (this.num == 0) {
-      return this.#headBigString(SINGLE_DIGITS[0]);
+    if (this.num === 0) {
+      return this.#toHeadBigString(SINGLE_DIGITS[0]);
     }
 
     let str = [];
     let digit_num = this.getDigitNum();
     let exists_zero = -1;
 
-    for (var i = digit_num; i >= 0; i--) {
+    for (let i = digit_num; i >= 0; i--) {
       let digit = this.getDigit(i);
       let power = i % 3;
-      let unit = power == 0 ? i / 3 : 0;
+      let unit = power === 0 ? i / 3 : 0;
       let digit_str = '';
       let power_str = POWERS[power];
       let unit_str = UNITS[unit];
 
-      if (power == 0) {
+      if (power === 0) {
         digit = this.getDigit(i, 2);
         if (1 <= digit && digit <= 9) {
           digit_str += SINGLE_DIGITS[digit];
@@ -31,31 +31,31 @@ class English extends Language {
         } else if (20 <= digit && digit <= 99) {
           let tens = Math.floor(digit / 10) % 10;
           let ones = digit % 10;
-          if (digit % 10 == 0) {
+          if (digit % 10 === 0) {
             digit_str += TENS_DIGITS[tens];
           } else {
             digit_str += `${TENS_DIGITS[tens]}-${SINGLE_DIGITS[ones]}`;
           }
         }
-      } else if (power == 1) {
+      } else if (power === 1) {
         continue;
-      } else if (power == 2) {
-        if (digit == 0) {
+      } else if (power === 2) {
+        if (digit === 0) {
           power_str = '';
         } else {
           digit_str += SINGLE_DIGITS[digit];
         }
       }
 
-      if (digit == 0 && exists_zero == -1) {
+      if (digit === 0 && exists_zero === -1) {
         exists_zero = power;
       }
 
-      if (exists_zero == 2 && unit != 0) {
+      if (exists_zero === 2 && unit !== 0) {
         unit_str = '';
       }
 
-      if (digit != 0 || power == 0) {
+      if (digit !== 0 || power === 0) {
         exists_zero = -1;
       }
 
@@ -63,10 +63,15 @@ class English extends Language {
       str = str.filter(e => e != '');
     }
 
-    return this.#headBigString(str.join(' '));
+    return this.#toHeadBigString(str.join(' '));
   }
 
-  #headBigString(str) {
+  /**
+   * 先頭のアルファベットを大文字に変換
+   * @param {string} str 対象の文字列
+   * @returns {string} 変換後の文字列
+   */
+  #toHeadBigString(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
 }

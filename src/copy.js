@@ -1,12 +1,14 @@
+/**
+ * 指定された文字列をクリップボードの書き込む
+ * @param {string} id ElementId
+ */
 function copyNumber(id) {
   const toast = document.getElementById('toast');
   const element = document.getElementById(id);
   const num = element.value;
   const text = element.innerText;
 
-  if (num === undefined) {
-    return;
-  }
+  if (!num) return;
 
   navigator.clipboard.writeText(text);
 
